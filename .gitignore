@@ -12,4 +12,4 @@
 !WindowsPowerShell/.gitignore
 !PowerShell/
 !PowerShell/*.ps1
-1PowerShell/.gitignore
+!PowerShell/.gitignore
