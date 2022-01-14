@@ -3,7 +3,7 @@ $PSProfileFolderPath = "$env:USERPROFILE\Documents\PSProfile"
 
 
 Write-Host "Loading environment scripts..." -ForegroundColor $DefaultMessageForegroundColor
-$items = Get-ChildItem -Path "$PSProfileFolderPath\WindowsPowerShell\*" -Include "Env*.ps1"
+$items = Get-ChildItem -Path "$PSProfileFolderPath\*" -Include "Env*.ps1"
 if($items -is [System.Array]) {
     foreach ($childItem in $items) {
         Write-Host "`tLoading Script: $($childItem.FullName)"
