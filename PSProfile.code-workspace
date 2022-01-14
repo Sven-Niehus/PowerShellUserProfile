@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "PSProfile"
+		},
+		{
+			"path": "./AHK"
+		},
+		{
+			"path": "PowerShell"
+		},
+		{
+			"path": "WindowsPowerShell"
+		}		
+	],
+	"settings": {}
+}
