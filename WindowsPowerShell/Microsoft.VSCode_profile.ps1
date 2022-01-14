@@ -1,1 +1,1 @@
-C:/Users/niehus/Documents/PSProfile/Microsoft.PowerShell_profile.ps1
+../PSProfile/Microsoft.PowerShell_profile.ps1
