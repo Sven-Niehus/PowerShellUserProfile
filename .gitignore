@@ -13,3 +13,4 @@
 !PowerShell/
 !PowerShell/*.ps1
 !PowerShell/.gitignore
+!LICENSE
