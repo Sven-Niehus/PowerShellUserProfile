@@ -105,86 +105,13 @@ if WinExist("| Microsoft Teams") ;Yes, every Teams meeting has that in the title
 
 ; Time Tracking
 
-; Time Tracking - ABC Support
-; CTRL+ALT+SHIFT+F13
-+^!F13::
-SplashTextOn, 200, 25, TimeTracking, TimeTracking in 1 Sekunde!
-WinMove, TimeTracking,, 860, 200
-Sleep, 1000
-SplashTextOff
-
-InputBox, UserInput, TimeTracking - ABC Support, Bitte Beschreibung eingeben:, , 640, 130, 640, 200, , , Support (
-if Not ErrorLevel
-{
-	FormatTime, CurrentDateTime , ,  yyyy-MM-dd HH:mm:ss
-	TimeTrackingLine = %CurrentDateTime%; ABC; Support;%UserInput%
-	FileAppend, %TimeTrackingLine%`r`n, C:\Users\niehus\Documents\TimeTracking.csv
-	if ErrorLevel
-		MsgBox %A_LastError%
-	
-	SplashTextOn, 640, 25, TimeTracking, %CurrentDateTime% - %UserInput%
-	WinMove, TimeTracking,, 640, 200
-	Sleep, 5000
-	SplashTextOff
-}
-return
-
-; Time Tracking - Kunden Support
-; CTRL+ALT+SHIFT+F14
-+^!F14::
-SplashTextOn, 200, 25, TimeTracking, TimeTracking in 1 Sekunde!
-WinMove, TimeTracking,, 860, 200
-Sleep, 1000
-SplashTextOff
-
-InputBox, KundeName, TimeTracking - Kunden Support, Bitte Kundennamen eingeben:, , 640, 130, 640, 200, , ,
-InputBox, Beschreibung, TimeTracking - Kunden Support, Bitte Beschreibung eingeben:, , 640, 130, 640, 200, , ,
-if Not ErrorLevel
-{
-	FormatTime, CurrentDateTime , ,  yyyy-MM-dd HH:mm:ss
-	TimeTrackingLine = %CurrentDateTime%; %KundeName%; Support;%Beschreibung%
-	FileAppend, %TimeTrackingLine%`r`n, C:\Users\niehus\Documents\TimeTracking.csv
-	if ErrorLevel
-		MsgBox %A_LastError%
-	
-	SplashTextOn, 640, 25, TimeTracking, %CurrentDateTime% - %KundeName% - %Beschreibung%
-	WinMove, TimeTracking,, 640, 200
-	Sleep, 5000
-	SplashTextOff
-}
-return
-
-; Time Tracking - ABC Orga
-; CTRL+ALT+SHIFT+F22
-+^!F22::
-SplashTextOn, 200, 25, TimeTracking, TimeTracking in 1 Sekunde!
-WinMove, TimeTracking,, 860, 200
-Sleep, 1000
-SplashTextOff
-
-InputBox, UserInput, TimeTracking - ABC Orga, Bitte Beschreibung eingeben:, , 640, 130, 640, 200, , , Orga
-if Not ErrorLevel
-{
-	FormatTime, CurrentDateTime , ,  yyyy-MM-dd HH:mm:ss
-	TimeTrackingLine = %CurrentDateTime%; ABC; Orga;%UserInput%
-	FileAppend, %TimeTrackingLine%`r`n, C:\Users\niehus\Documents\TimeTracking.csv
-	if ErrorLevel
-		MsgBox %A_LastError%
-	
-	SplashTextOn, 640, 25, TimeTracking, %CurrentDateTime% - %UserInput%
-	WinMove, TimeTracking,, 640, 200
-	Sleep, 5000
-	SplashTextOff
-}
-return
-
 ; Time Tracking - Pause
 ; CTRL+ALT+SHIFT+F23
 +^!F23::
 UserInput = "Pause"
 FormatTime, CurrentDateTime , ,  yyyy-MM-dd HH:mm:ss
-TimeTrackingLine = %CurrentDateTime%; anaptis; Pause;%UserInput%
-FileAppend, %TimeTrackingLine%`r`n, C:\Users\niehus\Documents\TimeTracking.csv
+TimeTrackingLine = %CurrentDateTime%; Pause;%UserInput%
+FileAppend, %TimeTrackingLine%`r`n, %USERPROFILE%\TimeTracking.csv
 if ErrorLevel
 	MsgBox %A_LastError%
 
@@ -194,7 +121,7 @@ Sleep, 5000
 SplashTextOff
 return
 
-; Time Tracking - 560
+; Time Tracking - General
 ; CTRL+ALT+SHIFT+F24
 +^!F24::
 SplashTextOn, 200, 25, TimeTracking, TimeTracking in 1 Sekunde!
@@ -202,12 +129,12 @@ WinMove, TimeTracking,, 860, 200
 Sleep, 1000
 SplashTextOff
 
-InputBox, UserInput, TimeTracking - anaptis (560), Bitte Beschreibung eingeben:, , 640, 130, 640, 200, , , Eigene Organisation
+InputBox, UserInput, TimeTracking - Bitte Beschreibung eingeben:, , 640, 130, 640, 200, , , 
 if Not ErrorLevel
 {
 	FormatTime, CurrentDateTime , ,  yyyy-MM-dd HH:mm:ss
-	TimeTrackingLine = %CurrentDateTime%; anaptis; 560;%UserInput%
-	FileAppend, %TimeTrackingLine%`r`n, C:\Users\niehus\Documents\TimeTracking.csv
+	TimeTrackingLine = %CurrentDateTime%;%UserInput%
+	FileAppend, %TimeTrackingLine%`r`n, %USERPROFILE%\TimeTracking.csv
 	if ErrorLevel
 		MsgBox %A_LastError%
 	
