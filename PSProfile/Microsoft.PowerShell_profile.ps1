@@ -1,7 +1,9 @@
 $DefaultMessageForegroundColor = "Green"
+$PSProfileFolderPath = "$env:USERPROFILE\Documents\PSProfile"
+
 
 Write-Host "Loading environment scripts..." -ForegroundColor $DefaultMessageForegroundColor
-$items = Get-ChildItem -Path "$env:USERPROFILE\PSProfile\WindowsPowerShell\*" -Include "Env*.ps1"
+$items = Get-ChildItem -Path "$PSProfileFolderPath\WindowsPowerShell\*" -Include "Env*.ps1"
 if($items -is [System.Array]) {
     foreach ($childItem in $items) {
         Write-Host "`tLoading Script: $($childItem.FullName)"
@@ -18,7 +20,7 @@ Write-Host "Environment Scripts loaded." -ForegroundColor $DefaultMessageForegro
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
 function Open-UserProfile {
-    code -n $env:USERPROFILE\Documents\PSProfile\Microsoft.PowerShell_profile.ps1
+    code -n $PSProfileFolderPath\Microsoft.PowerShell_profile.ps1
 }
 
 function Get-Args
