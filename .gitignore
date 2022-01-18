@@ -1,6 +1,8 @@
-!.gitignore
 *.*
 */
+!.gitignore
+!README.md
+!LICENSE
 !PSProfile.code-workspace
 !AHK/
 !AHK/*.ahk
@@ -13,4 +15,3 @@
 !PowerShell/
 !PowerShell/*.ps1
 !PowerShell/.gitignore
-!LICENSE
