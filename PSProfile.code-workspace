@@ -13,5 +13,11 @@
 			"path": "WindowsPowerShell"
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.powershell",
+			"streetsidesoftware.code-spell-checker"
+		]
+	}
 }
