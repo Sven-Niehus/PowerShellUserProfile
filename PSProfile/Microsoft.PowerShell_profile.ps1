@@ -96,6 +96,24 @@ function New-Junction {
     New-Item -ItemType Junction -Path $symbolicLinkFile -Target $existingFile;
 }
 
+function New-TempFolder {
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [switch]
+        $EnterFolder
+    )
+    $TempFolderPath = $env:TMP + "\" + $(New-Guid).Guid
+    Write-Host "Creating new temp folder at $TempFolderPath"
+    New-Item -ItemType Directory -Path $TempFolderPath
+
+    if($EnterFolder) {
+        explorer $TempFolderPath
+    }
+
+    return $TempFolderPath
+}
+
 function Show-PSHistory {
     code -n (Get-PSReadlineOption).HistorySavePath
 }
