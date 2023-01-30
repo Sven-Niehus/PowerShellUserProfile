@@ -9,6 +9,8 @@
 !PSProfile/
 !PSProfile/*.ps1
 !PSProfile/.gitignore
+!PSProfile/Documentation/*
+!PSProfile/Documentation/images/*.png
 !WindowsPowerShell/
 !WindowsPowerShell/*.ps1
 !WindowsPowerShell/.gitignore

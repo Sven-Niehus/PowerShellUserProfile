@@ -1,6 +1,8 @@
 $DefaultMessageForegroundColor = "Green"
 $PSProfileFolderPath = "$env:USERPROFILE\Documents\PSProfile"
 
+# oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --config C:\Users\niehus\AppData\Local\Programs\oh-my-posh\themes\hotstick.minimal.omp.json | Invoke-Expression
 
 Write-Host "Loading environment scripts..." -ForegroundColor $DefaultMessageForegroundColor
 $items = Get-ChildItem -Path "$PSProfileFolderPath\*" -Include "Env*.ps1"
